@@ -4,18 +4,19 @@ public class Employee {
 
 	private int identifier;
 	private Name name;
+	private static int idCounter = 0;
 
-	public Employee(int identifier, Name name) {
-		if(name == null)
+	public Employee(Name name) {
+		if (name == null)
 			throw new IllegalArgumentException("name cannot be null");
-		this.identifier = identifier;
+		this.identifier = idCounter++;
 		this.name = name;
 	}
-	
+
 	public int getIdentifier() {
 		return identifier;
 	}
-	
+
 	public Name getName() {
 		return name;
 	}
